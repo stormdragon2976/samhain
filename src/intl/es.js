@@ -1,10 +1,10 @@
 export default {
   // Home page, basic <title> and <description>
-  appName: 'Semaphore',
+  appName: 'Samhain',
   appDescription: 'Un cliente web alternativo para Mastodon, centrado en la velocidad y la sencillez.',
   homeDescription: `
     <p>
-      Semaphore es un cliente web para
+      Samhain es un cliente web para
       <a rel="noopener" target="_blank" href="https://joinmastodon.org">Mastodon</a>,
       diseñado para ser rápido y sencillo.
     </p>
@@ -14,20 +14,20 @@ export default {
   logIn: 'Iniciar sesión',
   footer: `
     <p>
-      Semaphore es
-      <a rel="noopener" target="_blank" href="https://github.com/NickColley/semaphore">software de código abierto</a>
+      Samhain es
+      <a rel="noopener" target="_blank" href="https://github.com/NickColley/samhain">software de código abierto</a>
       mantenido por
       <a rel="noopener" target="_blank" href="https://nickcolley.co.uk"Nick Colley</a>
       y distribuido bajo la
       <a rel="noopener" target="_blank"
-         href="https://github.com/NickColley/semaphore/blob/main/LICENSE">Licencia AGPL</a>.
+         href="https://github.com/NickColley/samhain/blob/main/LICENSE">Licencia AGPL</a>.
       Aquí está la <a href="/settings/about#privacy-policy" rel="prefetch">política de privacidad</a>.
       Es una continuación de Pinafore creado por
         <a rel="noopener" target="_blank" href="https://nolanlawson.com">Nolan Lawson</a>.
     </p>
   `,
   // Manifest
-  longAppName: 'Semaphore para Mastodon',
+  longAppName: 'Samhain para Mastodon',
   newStatus: 'Nuevo toot',
   // Generic UI
   loading: 'Cargando',
@@ -179,7 +179,7 @@ export default {
     ·
     {showInstanceName, select,
       true {{instanceName}}
-      other {Semaphore}
+      other {Samhain}
     }
   `,
   pinLabel: `{label} {pinnable, select,
@@ -327,17 +327,17 @@ export default {
   verified: 'Verified',
   // About page
   about: 'Acerca de',
-  aboutApp: 'Acerca de Semaphore',
+  aboutApp: 'Acerca de Samhain',
   aboutAppDescription: `
   <p>
-    Semaphore es
+    Samhain es
     <a rel="noopener" target="_blank"
-      href="https://github.com/NickColley/semaphore">software de código abierto</a>
+      href="https://github.com/NickColley/samhain">software de código abierto</a>
     mantenido por
     <a rel="noopener" target="_blank" href="https://nickcolley.co.uk"Nick Colley</a>
     y distribuido bajo la
     <a rel="noopener" target="_blank"
-      href="https://github.com/NickColley/semaphore/blob/main/LICENSE">Licencia AGPL</a>.
+      href="https://github.com/NickColley/samhain/blob/main/LICENSE">Licencia AGPL</a>.
     Aquí está la <a href="/settings/about#privacy-policy" rel="prefetch">política de privacidad</a>.
     Es una continuación de Pinafore creado por
       <a rel="noopener" target="_blank" href="https://nolanlawson.com">Nolan Lawson</a>.
@@ -346,13 +346,13 @@ export default {
   <h2 id="privacy-policy">Política de privacidad</h2>
 
   <p>
-    Semaphore no almacena ninguna información personal en sus servidores,
+    Samhain no almacena ninguna información personal en sus servidores,
     incluyendo, pero no limitándose a nombres, direcciones de correo electrónico,
     direcciones IP, posts y fotos.
   </p>
 
   <p>
-    Semaphore es un sitio estático. Todos los datos son almacenados en tu navegador y compartidos con las instancias del fediverso
+    Samhain es un sitio estático. Todos los datos son almacenados en tu navegador y compartidos con las instancias del fediverso
     a las que te conectas.
   </p>
 
@@ -428,8 +428,8 @@ export default {
   notificationFilters: 'Filtros para notificaciones',
   pushNotifications: 'Notificaciones Push',
   // Add instance page
-  storageError: `Parece que Semaphore no puede almacenar datos localmente. ¿Está tu navegador en modo privado
-          o bloqueando las cookies? Semaphore almacena todos los datos localmente, y requiere LocalStorage e
+  storageError: `Parece que Samhain no puede almacenar datos localmente. ¿Está tu navegador en modo privado
+          o bloqueando las cookies? Samhain almacena todos los datos localmente, y requiere LocalStorage e
           IndexedDB para funcionar correctamente.`,
   javaScriptError: 'Debes habilitar JavaScript para iniciar sesión.',
   enterInstanceName: 'Introducir nombre de instancia',
@@ -450,7 +450,7 @@ export default {
   // Link text
   logInToAnInstancePre: '',
   logInToAnInstanceText: 'Inicia sesión en una instancia',
-  logInToAnInstancePost: 'para empezar a usar Semaphore.',
+  logInToAnInstancePost: 'para empezar a usar Samhain.',
   // Another custom tooltip
   showRingPre: 'Mostrar siempre',
   showRingText: 'anillo del foco',

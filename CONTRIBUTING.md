@@ -1,10 +1,10 @@
-# Contributing to semaphore
+# Contributing to samhain
 
 ## Building
 
-Semaphore requires [Node.js](https://nodejs.org/en/) and [Yarn](https://yarnpkg.com).
+Samhain requires [Node.js](https://nodejs.org/en/) and [Yarn](https://yarnpkg.com).
 
-To build Semaphore for production, first install dependencies:
+To build Samhain for production, first install dependencies:
 
     yarn --production --pure-lockfile
 
@@ -23,7 +23,7 @@ To build a Docker image for production:
     docker build .
     docker run -d -p 4002:4002 [your-image]
 
-Now Semaphore is running at `localhost:4002`.
+Now Samhain is running at `localhost:4002`.
 
 ### docker-compose
 
@@ -35,13 +35,13 @@ The image will build and start, then detach from the terminal running at `localh
 
 ### Updating
 
-To keep your version of Semaphore up to date, you can use `git` to check out the latest tag:
+To keep your version of Samhain up to date, you can use `git` to check out the latest tag:
 
     git checkout $(git tag -l | sort -Vr | head -n 1)
 
 ### Exporting
 
-Semaphore is a static site. When you run `yarn build`, static files will be
+Samhain is a static site. When you run `yarn build`, static files will be
 written to `__sapper__/export`.
 
 It is _not_ recommended to directly expose these files when self-hosting. Instead, you should use `node server.js` (e.g. with an
@@ -70,7 +70,7 @@ because of [this issue](https://github.com/paulmillr/chokidar/issues/237).
 
 ## Linting
 
-semaphore uses [JavaScript Standard Style](https://standardjs.com/).
+samhain uses [JavaScript Standard Style](https://standardjs.com/).
 
 Lint:
 
@@ -111,7 +111,7 @@ If the script isn't able to set up the Postgres database, try running:
 
 Then:
 
-    psql -d template1 -c "CREATE USER semaphore WITH PASSWORD 'semaphore' CREATEDB;"
+    psql -d template1 -c "CREATE USER samhain WITH PASSWORD 'samhain' CREATEDB;"
 
 ### Testing in development mode
 
@@ -121,7 +121,7 @@ In separate terminals:
 
     yarn run run-mastodon
 
-2\. Run a Semaphore dev server:
+2\. Run a Samhain dev server:
 
     yarn run dev
 
@@ -198,24 +198,24 @@ To disable minification in a production build (for debugging purposes), you can 
 
 The Webpack Bundle Analyzer `report.html` and `stats.json` are available publicly via e.g.:
 
-- [beta.semaphore.social/report.html](https://beta.semaphore.social/report.html)
-- [beta.semaphore.social/stats.json](https://beta.semaphore.social/stats.json)
+- [beta.samhain.social/report.html](https://beta.samhain.social/report.html)
+- [beta.samhain.social/stats.json](https://beta.samhain.social/stats.json)
 
 This is also available locally after `yarn run build` at `.sapper/client/report.html`.
 
 ## Deploying
 
-This section only applies to `beta.semaphore.social` and `semaphore.social`, not if you're hosting your own version of
-Semaphore.
+This section only applies to `beta.samhain.social` and `samhain.social`, not if you're hosting your own version of
+Samhain.
 
-The site uses [Vercel](https://vercel.com). The `main` branch publishes to `beta.semaphore.social` and the `production`
-branch deploys to `semaphore.social`.
+The site uses [Vercel](https://vercel.com). The `main` branch publishes to `beta.samhain.social` and the `production`
+branch deploys to `samhain.social`.
 
 ## Architecture
 
-See [Architecture.md](https://github.com/NickColley/semaphore/blob/main/docs/Architecture.md).
+See [Architecture.md](https://github.com/NickColley/samhain/blob/main/docs/Architecture.md).
 
 ## Internationalization
 
-See [Internationalization.md](https://github.com/NickColley/semaphore/blob/main/docs/Internationalization.md).
+See [Internationalization.md](https://github.com/NickColley/samhain/blob/main/docs/Internationalization.md).
 

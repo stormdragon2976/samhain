@@ -1,3 +1,3 @@
-// same as the one used for SemaphoreEmoji
+// same as the one used for SamhainEmoji
 export const FONT_FAMILY = '"Twemoji Mozilla","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol",' +
   '"Noto Color Emoji","EmojiOne Color","Android Emoji",sans-serif'

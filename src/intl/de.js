@@ -1,10 +1,10 @@
 export default {
   // Home page, basic <title> and <description>
-  appName: 'Semaphore',
+  appName: 'Samhain',
   appDescription: 'Ein alternativer Web Client für Mastodon, der auf Geschwindigkeit und einfache Bedienung ausgelegt ist.',
   homeDescription: `
     <p>
-      Semaphore ist ein Web Client für
+      Samhain ist ein Web Client für
       <a rel="noopener" target="_blank" href="https://joinmastodon.org">Mastodon</a>,
       der für Geschwindigkeit und einfache Bedienung konzipiert wurde.
     </p>
@@ -14,12 +14,12 @@ export default {
   logIn: 'Anmelden',
   footer: `
     <p>
-      Semaphore ist
-      <a rel="noopener" target="_blank" href="https://github.com/NickColley/semaphore">quelloffene Software</a>,
+      Samhain ist
+      <a rel="noopener" target="_blank" href="https://github.com/NickColley/samhain">quelloffene Software</a>,
       gepflegt von <a rel="noopener" target="_blank" href="https://nickcolley.co.uk">Nick Colley</a>
       und verteilt unter der
       <a rel="noopener" target="_blank"
-         href="https://github.com/NickColley/semaphore/blob/main/LICENSE">AGPL Lizenz</a>.
+         href="https://github.com/NickColley/samhain/blob/main/LICENSE">AGPL Lizenz</a>.
       Hier ist die <a href="/settings/about#privacy-policy" rel="prefetch">Datenschutzerklärung</a>.
       Es ist eine Fortsetzung des Pinafore-Projekts von <a rel="noopener" target="_blank" href="https://nolanlawson.com">Nolan Lawson</a>.
     </p>
@@ -172,7 +172,7 @@ export default {
     ·
     {showInstanceName, select,
       true {{instanceName}}
-      other {Semaphore}
+      other {Samhain}
     }
   `,
   pinLabel: `{label} {pinnable, select,
@@ -314,28 +314,28 @@ export default {
   verified: 'Verified',
   // About page
   about: 'Über',
-  aboutApp: 'Über Semaphore',
+  aboutApp: 'Über Samhain',
   aboutAppDescription: `
   <p>
-    Semaphore ist
-    <a rel="noopener" target="_blank" href="https://github.com/NickColley/semaphore">quelloffene Software</a>,
+    Samhain ist
+    <a rel="noopener" target="_blank" href="https://github.com/NickColley/samhain">quelloffene Software</a>,
     gepflegt von <a rel="noopener" target="_blank" href="https://nickcolley.co.uk">Nick Colley</a>
     und verteilt unter der
     <a rel="noopener" target="_blank"
-      href="https://github.com/NickColley/semaphore/blob/main/LICENSE">AGPL Lizenz</a>.
+      href="https://github.com/NickColley/samhain/blob/main/LICENSE">AGPL Lizenz</a>.
     Es ist eine Fortsetzung des Pinafore-Projekts von <a rel="noopener" target="_blank" href="https://nolanlawson.com">Nolan Lawson</a>.
   </p>
 
   <h2 id="privacy-policy">Datenschutzerklärung</h2>
 
   <p>
-    Semaphore speichert keine persönlichen Informationen auf seinen Servern,
+    Samhain speichert keine persönlichen Informationen auf seinen Servern,
     einschließlich, aber nicht beschränkt auf, Namen, E-Mail-Adressen,
     IP-Adressen, Beiträgen, und Fotos.
   </p>
 
   <p>
-    Semaphore ist eine statische Seite. Alle Daten werden lokal in Ihrem Browser gespeichert und mit den Instanzen des Fediversums geteilt, zu denen Sie sich verbinden.
+    Samhain ist eine statische Seite. Alle Daten werden lokal in Ihrem Browser gespeichert und mit den Instanzen des Fediversums geteilt, zu denen Sie sich verbinden.
   </p>
 
   <h2>Mitwirkende</h2>
@@ -404,7 +404,7 @@ export default {
   notificationFilters: 'Filter für Benachrichtigungen',
   pushNotifications: 'Push-Benachrichtigungen',
   // Add instance page
-  storageError: 'Es sieht so aus als ob Semaphore lokal keine Daten speichern kann. Ist Dein Browser im privaten Modus oder blockiert Cookies? Semaphore speichert alle Daten lokal und braucht zum ordnungsgemäßen Betrieb LocalStorage und IndexedDB.',
+  storageError: 'Es sieht so aus als ob Samhain lokal keine Daten speichern kann. Ist Dein Browser im privaten Modus oder blockiert Cookies? Samhain speichert alle Daten lokal und braucht zum ordnungsgemäßen Betrieb LocalStorage und IndexedDB.',
   javaScriptError: 'Du musst zum Einloggen javaScript einschalten.',
   enterInstanceName: 'Namen der Instanz eingeben',
   instanceColon: 'Instanz:',
@@ -424,7 +424,7 @@ export default {
   // Link text
   logInToAnInstancePre: '',
   logInToAnInstanceText: 'Melde Dich bei einer Instanz an',
-  logInToAnInstancePost: 'um Semaphore zu verwenden.',
+  logInToAnInstancePost: 'um Samhain zu verwenden.',
   // Another custom tooltip
   showRingPre: 'Immer einen',
   showRingText: 'Fokusring',

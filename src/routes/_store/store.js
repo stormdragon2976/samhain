@@ -73,17 +73,17 @@ const nonPersistedState = {
 const state = Object.assign({}, persistedState, nonPersistedState)
 const keysToStoreInLocalStorage = new Set(Object.keys(persistedState))
 
-export class SemaphoreStore extends LocalStorageStore {
+export class SamhainStore extends LocalStorageStore {
   constructor (state) {
     super(state, keysToStoreInLocalStorage)
   }
 }
 
-SemaphoreStore.prototype.observe = observe
+SamhainStore.prototype.observe = observe
 
-export const store = new SemaphoreStore(state)
+export const store = new SamhainStore(state)
 
-mixins(SemaphoreStore)
+mixins(SamhainStore)
 computations(store)
 observers(store)
 

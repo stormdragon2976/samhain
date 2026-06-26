@@ -6,7 +6,7 @@ fixture`001-basic-spec.js`
 
 test('has the correct <h1>', async t => {
   await t
-    .expect($('.main-content h1').innerText).eql('Semaphore')
+    .expect($('.main-content h1').innerText).eql('Samhain')
 })
 
 test('navigates to about', async t => {
@@ -15,7 +15,7 @@ test('navigates to about', async t => {
     .expect(getUrl()).contains('/settings')
     .click('a[href="/settings/about"]')
     .expect(getUrl()).contains('/about')
-    .expect($('.main-content h1').innerText).eql('About Semaphore')
+    .expect($('.main-content h1').innerText).eql('About Samhain')
 })
 
 test('navigates to /settings/instances/add', async t => {

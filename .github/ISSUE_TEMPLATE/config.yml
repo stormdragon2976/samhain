@@ -1,10 +1,10 @@
 blank_issues_enabled: false
 contact_links:
   - name: 💡 Suggest a new feature or idea
-    url: https://github.com/NickColley/semaphore/discussions/categories/new-features-and-ideas
-    about: Missing something in Semaphore? Accessibility related features and ideas will be prioritised.
+    url: https://github.com/NickColley/samhain/discussions/categories/new-features-and-ideas
+    about: Missing something in Samhain? Accessibility related features and ideas will be prioritised.
   - name: ❔ Ask a question
-    url: https://fosstodon.org/@semaphore
+    url: https://fosstodon.org/@samhain
     about: Send us a toot on Mastodon
 
 

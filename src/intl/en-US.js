@@ -1,10 +1,10 @@
 export default {
   // Home page, basic <title> and <description>
-  appName: 'Semaphore',
+  appName: 'Samhain',
   appDescription: 'An alternative web client for Mastodon, focused on speed and simplicity.',
   homeDescription: `
     <p>
-      Semaphore is a web client for
+      Samhain is a web client for
       <a rel="noopener" target="_blank" href="https://joinmastodon.org">Mastodon</a>,
       designed for speed and simplicity.
     </p>
@@ -14,19 +14,19 @@ export default {
   logIn: 'Log in',
   footer: `
     <p>
-      Semaphore is
-      <a rel="noopener" target="_blank" href="https://github.com/NickColley/semaphore">open-source software</a>
+      Samhain is
+      <a rel="noopener" target="_blank" href="https://github.com/NickColley/samhain">open-source software</a>
       maintained by
       <a rel="noopener" target="_blank" href="https://nickcolley.co.uk">Nick Colley</a>
       and distributed under the
       <a rel="noopener" target="_blank"
-         href="https://github.com/NickColley/semaphore/blob/main/LICENSE">AGPL License</a>.
+         href="https://github.com/NickColley/samhain/blob/main/LICENSE">AGPL License</a>.
       It is a continuation of the Pinafore project created by
          <a rel="noopener" target="_blank" href="https://nolanlawson.com">Nolan Lawson</a>.
     </p>
   `,
   // Manifest
-  longAppName: 'Semaphore for Mastodon',
+  longAppName: 'Samhain for Mastodon',
   newStatus: 'New toot',
   // Generic UI
   loading: 'Loading',
@@ -178,7 +178,7 @@ export default {
     ·
     {showInstanceName, select,
       true {{instanceName}}
-      other {Semaphore}
+      other {Samhain}
     }
   `,
   pinLabel: `{label} {pinnable, select,
@@ -326,15 +326,15 @@ export default {
   verified: 'Verified',
   // About page
   about: 'About',
-  aboutApp: 'About Semaphore',
+  aboutApp: 'About Samhain',
   aboutAppDescription: `
   <p>
-    Semaphore is
-    <a rel="noopener" target="_blank" href="https://github.com/NickColley/semaphore">free and open-source software</a> 
+    Samhain is
+    <a rel="noopener" target="_blank" href="https://github.com/NickColley/samhain">free and open-source software</a>
     maintained by <a rel="noopener" target="_blank" href="https://nickcolley.co.uk">Nick Colley</a>
     and distributed under the
     <a rel="noopener" target="_blank"
-       href="https://github.com/NickColley/semaphore/blob/main/LICENSE">GNU Affero General Public License</a>.
+       href="https://github.com/NickColley/samhain/blob/main/LICENSE">GNU Affero General Public License</a>.
     It is a continuation of the Pinafore project created by
        <a rel="noopener" target="_blank" href="https://nolanlawson.com">Nolan Lawson</a>.
   </p>
@@ -342,13 +342,13 @@ export default {
   <h2 id="privacy-policy">Privacy Policy</h2>
 
   <p>
-    Semaphore does not store any personal information on its servers,
+    Samhain does not store any personal information on its servers,
     including but not limited to names, email addresses,
     IP addresses, posts, and photos.
   </p>
 
   <p>
-    Semaphore is a static site. All data is stored locally in your browser and shared with the fediverse
+    Samhain is a static site. All data is stored locally in your browser and shared with the fediverse
     instance(s) you connect to.
   </p>
 
@@ -426,8 +426,8 @@ export default {
   notificationFilters: 'Notification filters',
   pushNotifications: 'Push notifications',
   // Add instance page
-  storageError: `It seems Semaphore cannot store data locally. Is your browser in private mode
-          or blocking cookies? Semaphore stores all data locally, and requires LocalStorage and
+  storageError: `It seems Samhain cannot store data locally. Is your browser in private mode
+          or blocking cookies? Samhain stores all data locally, and requires LocalStorage and
           IndexedDB to work correctly.`,
   javaScriptError: 'You must enable JavaScript to log in.',
   enterInstanceName: 'Enter instance name',
@@ -448,7 +448,7 @@ export default {
   // Link text
   logInToAnInstancePre: '',
   logInToAnInstanceText: 'Log in to an instance',
-  logInToAnInstancePost: 'to start using Semaphore.',
+  logInToAnInstancePost: 'to start using Samhain.',
   // Another custom tooltip
   showRingPre: 'Always show',
   showRingText: 'focus ring',

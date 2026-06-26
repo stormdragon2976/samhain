@@ -1,11 +1,11 @@
 ---
 version: "3"
 services:
-  semaphore:
+  samhain:
     restart: unless-stopped
     build:
       context: .
       dockerfile: Dockerfile
-    image: semaphore:latest
+    image: samhain:latest
     ports:
       - 4002:4002

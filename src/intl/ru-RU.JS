@@ -1,10 +1,10 @@
 export default {
   // Home page, basic <title> and <description>
-  appName: 'Semaphore',
+  appName: 'Samhain',
   appDescription: 'Альтернативный веб-клиент для Mastodon, ориентированный на скорость и простоту.',
   homeDescription: `
     <p>
-    Semaphore — веб-клиент для
+    Samhain — веб-клиент для
       <a rel="noopener" target="_blank" href="https://joinmastodon.org">Mastodon</a>,
       разработан для скорости и простоты.
     </p>
@@ -17,18 +17,18 @@ export default {
   logIn: 'Войти',
   footer: `
     <p>
-      Semaphore — это
-      <a rel="noopener" target="_blank" href="https://github.com/NickColley/semaphore">программное обеспечение с открытым исходным кодом</a>
+      Samhain — это
+      <a rel="noopener" target="_blank" href="https://github.com/NickColley/samhain">программное обеспечение с открытым исходным кодом</a>
       поддерживается <a rel="noopener" target="_blank" href="https://nickcolley.co.uk">Nick Colley/a>.
       и распространяемое под лицензией
       <a rel="noopener" target="_blank"
-         href="https://github.com/NickColley/semaphore/blob/main/LICENSE">AGPL License</a>.
+         href="https://github.com/NickColley/samhain/blob/main/LICENSE">AGPL License</a>.
       Здесь <a href="/settings/about#privacy-policy" rel="prefetch">политика конфиденциальности</a>.
       Это продолжение проекта Pinafore, созданного <a rel="noopener" target="_blank" href="https://nolanlawson.com">Ноланом Лоусоном</a>.
     </p>
   `,
   // Manifest
-  longAppName: 'Semaphore для Mastodon',
+  longAppName: 'Samhain для Mastodon',
   newStatus: 'Новая запись',
   // Generic UI
   loading: 'Загрузка',
@@ -176,7 +176,7 @@ export default {
     }
     {showInstanceName, select,
       true {{instanceName}}
-      other {Semaphore}
+      other {Samhain}
     }
     ·
     {name}
@@ -326,28 +326,28 @@ export default {
   verified: 'Verified',
   // About page
   about: 'О нас',
-  aboutApp: 'О Semaphore',
+  aboutApp: 'О Samhain',
   aboutAppDescription: `
   <p>
-    Semaphore — это
-    <a rel="noopener" target="_blank" href="https://github.com/NickColley/semaphore">программное обеспечение с открытым исходным кодом</a>
+    Samhain — это
+    <a rel="noopener" target="_blank" href="https://github.com/NickColley/samhain">программное обеспечение с открытым исходным кодом</a>
     поддерживается <a rel="noopener" target="_blank" href="https://nickcolley.co.uk">Nick Colley/a>.
     и распространяемое под лицензией
     <a rel="noopener" target="_blank"
-      href="https://github.com/NickColley/semaphore/blob/main/LICENSE">AGPL License</a>.
+      href="https://github.com/NickColley/samhain/blob/main/LICENSE">AGPL License</a>.
     Это продолжение проекта Pinafore, созданного <a rel="noopener" target="_blank" href="https://nolanlawson.com">Ноланом Лоусоном</a>.
   </p>
 
   <h2 id="privacy-policy">Политика конфиденциальности</h2>
 
   <p>
-    Semaphore не хранит никакой личной информации на своих серверах,
+    Samhain не хранит никакой личной информации на своих серверах,
     включая, помимо прочего, имена, адреса электронной почты,
     IP-адреса, сообщения и фотографии.
   </p>
 
   <p>
-  Semaphore — это статический сайт. Все данные хранятся локально в вашем браузере и передаются через Федиверс
+  Samhain — это статический сайт. Все данные хранятся локально в вашем браузере и передаются через Федиверс
     инстансы, к которым вы подключаетесь.
   </p>
 
@@ -424,8 +424,8 @@ export default {
   notificationFilters: 'Фильтры уведомлений',
   pushNotifications: 'Всплывающее уведомление',
   // Add instance page
-  storageError: `Похоже, Semaphore не может хранить данные локально. Ваш браузер находится в приватном режиме
-          или блокирует файлов cookie? Semaphore хранит все данные локально, и для этого требуется LocalStorage и
+  storageError: `Похоже, Samhain не может хранить данные локально. Ваш браузер находится в приватном режиме
+          или блокирует файлов cookie? Samhain хранит все данные локально, и для этого требуется LocalStorage и
           IndexedDB для корректной работы.`,
   javaScriptError: 'Вы должны включить JavaScript, чтобы войти в систему.',
   enterInstanceName: 'Введите имя инстанса',
@@ -446,7 +446,7 @@ export default {
   // Link text
   logInToAnInstancePre: '',
   logInToAnInstanceText: 'Войти в инстанс',
-  logInToAnInstancePost: 'чтобы начать использовать Semaphore.',
+  logInToAnInstancePost: 'чтобы начать использовать Samhain.',
   // Another custom tooltip
   showRingPre: 'Всегда показывать',
   showRingText: 'кольцо фокусировки',

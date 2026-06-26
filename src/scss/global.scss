@@ -4,7 +4,7 @@
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, SemaphoreRegular, sans-serif;
+  font-family: system-ui, -apple-system, SamhainRegular, sans-serif;
   font-size: 14px;
   line-height: 1.5;
   color: var(--body-text-color);
@@ -167,7 +167,7 @@ input:required, input:invalid {
 }
 
 textarea {
-  font-family: CountryFlagEmojiPolyfill, system-ui, -apple-system, SemaphoreRegular, sans-serif, SemaphoreEmoji;
+  font-family: CountryFlagEmojiPolyfill, system-ui, -apple-system, SamhainRegular, sans-serif, SamhainEmoji;
   font-size: inherit;
   box-sizing: border-box;
 }
@@ -211,7 +211,7 @@ textarea {
 }
 
 .inline-emoji {
-  font-family: CountryFlagEmojiPolyfill, SemaphoreEmoji, sans-serif;
+  font-family: CountryFlagEmojiPolyfill, SamhainEmoji, sans-serif;
 }
 
 .invisible {

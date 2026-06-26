@@ -8,15 +8,15 @@ export const NOTIFICATION_TIMELINES_STORE = 'notification_timelines-v4'
 export const PINNED_STATUSES_STORE = 'pinned_statuses-v4'
 export const THREADS_STORE = 'threads-v4'
 
-export const TIMESTAMP = '__semaphore_ts'
-export const ACCOUNT_ID = '__semaphore_acct_id'
-export const STATUS_ID = '__semaphore_status_id'
-export const REBLOG_ID = '__semaphore_reblog_id'
-export const USERNAME_LOWERCASE = '__semaphore_acct_lc'
+export const TIMESTAMP = '__samhain_ts'
+export const ACCOUNT_ID = '__samhain_acct_id'
+export const STATUS_ID = '__samhain_status_id'
+export const REBLOG_ID = '__samhain_reblog_id'
+export const USERNAME_LOWERCASE = '__samhain_acct_lc'
 
 export const DB_VERSION_INITIAL = 9
 export const DB_VERSION_SEARCH_ACCOUNTS = 10
-export const DB_VERSION_SNOWFLAKE_IDS = 12 // 11 skipped because of mistake deployed to beta.semaphore.social
+export const DB_VERSION_SNOWFLAKE_IDS = 12 // 11 skipped because of mistake deployed to beta.samhain.social
 
 // Using an object for these so that unit tests can change them
 export const DB_VERSION_CURRENT = { version: 12 }
