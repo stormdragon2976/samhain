@@ -40,11 +40,44 @@ test.describe('Accessibility and keyboard navigation', () => {
   test('status action buttons are present with accessible names', async ({ page }) => {
     mock_mastodon_api(page, { statuses: [statusFixture] })
     await seed_state(page)
-    const actions = page.locator('footer[aria-label="Status actions"]')
+    const actions = page.getByRole('group', { name: 'Actions for Alice' })
     await expect(actions).toBeVisible()
     for (const label of ['Reply', 'Boost', 'Favorite', 'More']) {
-      await expect(actions.getByRole('button', { name: label })).toBeVisible()
+      await expect(actions.getByRole('button', { name: label, exact: true })).toBeVisible()
     }
+  })
+
+  test('status actions stay grouped with their own status in browse layout', async ({ page }) => {
+    const secondStatus = {
+      ...statusFixture,
+      id: '101',
+      content: '<p>Second status in the timeline.</p>',
+      account: {
+        id: '2',
+        username: 'bob',
+        acct: 'bob@example.social',
+        display_name: 'Bob'
+      }
+    }
+    mock_mastodon_api(page, { statuses: [statusFixture, secondStatus] })
+    await seed_state(page)
+
+    const timeline = page.getByRole('feed', { name: 'Timeline' })
+    const statuses = timeline.locator('[data-status-card]')
+    await expect(statuses).toHaveCount(2)
+    await expect(page.getByRole('article', { name: 'Alice' })).toBeVisible()
+    await expect(page.getByRole('article', { name: 'Bob' })).toBeVisible()
+    await expect(statuses.first()).not.toHaveAttribute('aria-label')
+    await expect(statuses.first().getByRole('group', { name: 'Actions for Alice' })).toBeVisible()
+    await expect(statuses.first()).toHaveAccessibleDescription(/Hello world from the timeline/)
+    await expect(statuses.first().locator('.status-separator')).toHaveAttribute('aria-hidden', 'true')
+    await expect(timeline).toHaveCSS('margin-top', '12px')
+
+    const firstActionsBox = await statuses.first().locator('footer').boundingBox()
+    const secondHeaderBox = await statuses.nth(1).locator('header').boundingBox()
+    expect(firstActionsBox).not.toBeNull()
+    expect(secondHeaderBox).not.toBeNull()
+    expect(firstActionsBox.y + firstActionsBox.height).toBeLessThan(secondHeaderBox.y)
   })
 
   test('compose form controls are labeled and keyboard reachable', async ({ page }) => {
@@ -71,5 +104,27 @@ test.describe('Accessibility and keyboard navigation', () => {
     mock_mastodon_api(page, { statuses: [statusFixture] })
     await seed_state(page)
     await expect(page.locator('section[aria-label="Timeline"]')).toHaveAttribute('aria-live', 'polite')
+  })
+
+  test('Arrow keys move focus between timeline statuses', async ({ page }) => {
+    const secondStatus = {
+      ...statusFixture,
+      id: '101',
+      content: '<p>Second status in the timeline.</p>'
+    }
+    mock_mastodon_api(page, { statuses: [statusFixture, secondStatus] })
+    await seed_state(page)
+
+    const timeline = page.getByRole('feed', { name: 'Timeline' })
+    const statuses = timeline.locator('[data-status-card]')
+    await expect(statuses).toHaveCount(2)
+    await expect(statuses.first()).toHaveAttribute('aria-posinset', '1')
+    await expect(statuses.nth(1)).toHaveAttribute('aria-posinset', '2')
+
+    await statuses.first().focus()
+    await page.keyboard.press('ArrowDown')
+    await expect(statuses.nth(1)).toBeFocused()
+    await page.keyboard.press('ArrowUp')
+    await expect(statuses.first()).toBeFocused()
   })
 })

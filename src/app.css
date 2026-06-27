@@ -44,6 +44,7 @@ input:focus-visible,
 select:focus-visible,
 textarea:focus-visible,
 a:focus-visible,
+article:focus-visible,
 main:focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 2px;
@@ -80,6 +81,18 @@ textarea {
 
 textarea {
   resize: vertical;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .skip-link {
@@ -236,6 +249,11 @@ h2 {
   display: grid;
 }
 
+.page-header + .content-stack {
+  border-top: 1px solid var(--border);
+  margin-top: 0.75rem;
+}
+
 .status-card,
 .simple-row,
 .details-panel,
@@ -260,15 +278,27 @@ h2 {
 }
 
 .status-card footer {
+  margin-top: 1rem;
+}
+
+.status-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-top: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .status-card footer button {
   background: transparent;
   color: var(--accent-strong);
+}
+
+.status-separator {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 1rem -1rem -1rem;
 }
 
 .form-panel,

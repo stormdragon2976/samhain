@@ -78,7 +78,7 @@ export function create_login_preview(instanceUrl) {
 export async function register_app(instanceUrl, options) {
   const normalizedUrl = normalize_instance_url(instanceUrl)
   const scopes = options.scopes ?? defaultScopes
-  const form = new FormData()
+  const form = new URLSearchParams()
   form.set('client_name', options.clientName)
   form.set('redirect_uris', options.redirectUri)
   form.set('scopes', scopes.join(' '))
@@ -113,7 +113,7 @@ export async function register_app(instanceUrl, options) {
 export async function exchange_oauth_code(instanceUrl, options) {
   const normalizedUrl = normalize_instance_url(instanceUrl)
   const scopes = options.scopes ?? defaultScopes
-  const form = new FormData()
+  const form = new URLSearchParams()
   form.set('client_id', options.clientId)
   form.set('client_secret', options.clientSecret)
   form.set('code', options.code)

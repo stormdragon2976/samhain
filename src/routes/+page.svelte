@@ -37,7 +37,14 @@
   description="Latest statuses from accounts you follow."
 />
 
-<section class="content-stack" aria-label="Timeline" aria-live="polite">
+<section
+  class="content-stack"
+  role="feed"
+  aria-label="Timeline"
+  aria-live="polite"
+  aria-busy={loading}
+  data-status-feed
+>
   {#if loading}
     <p>Loading timeline…</p>
   {/if}
@@ -47,8 +54,11 @@
   {#if !loading && !error && (!$account.instanceUrl || !$account.accessToken)}
     <p>No account connected. <a class="text-link" href="/login">Connect an instance</a> to load your timeline.</p>
   {/if}
-  {#each statuses as status (status.id)}
+  {#each statuses as status, index (status.id)}
     <StatusCard
+      statusId={status.id}
+      {index}
+      length={statuses.length}
       author={status.account?.display_name || status.account?.username || 'Unknown'}
       handle={`@${status.account?.acct ?? ''}`}
       content={status.content || status.text || ''}
