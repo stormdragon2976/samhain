@@ -1,13 +1,13 @@
 # Samhain Modernization Progress
 
 ## Current State
-- Phase: 3 - Core daily use
+- Phase: 4 - Tests and verification
 - Status: complete
-- Last updated: 2026-06-27 00:51 EDT
-- Last verified command: `pnpm install --frozen-lockfile`; `pnpm check`; `pnpm build`; `pnpm lint`; route smoke checks with `curl -s -o /dev/null -w "%{http_code}" --max-redirs 10` against `/`, `/login`, `/notifications`, `/compose`, `/settings`, `/auth/callback`, and `/statuses/phase3-checkpoint`.
-- Last verified result: svelte-check, build, and lint all passed with 0 errors; every smoke-tested route returned HTTP 200 from the local dev server.
-- Current blocker: None for Phase 3. Real OAuth round-trip and live API responses still require a real Mastodon instance and are tracked as Phase 4 acceptance criteria.
-- Next safe action: Start Phase 4 by adding Playwright tests for fresh login, home timeline, notifications, status detail, compose posting, settings persistence, and keyboard navigation.
+- Last updated: 2026-06-27 10:18 EDT
+- Last verified command: `pnpm check`; `pnpm build`; `pnpm lint`; `pnpm exec playwright test --reporter=list` (escalated run; see Phase 4 notes).
+- Last verified result: svelte-check found 0 errors and 0 warnings; production build completed; eslint completed; Playwright e2e suite passed 27/27.
+- Current blocker: None for Phase 4. Real OAuth round-trip and live API responses still require a real Mastodon instance and are tracked outside the mocked e2e suite.
+- Next safe action: Start Phase 5 cleanup and hardening. Keep the Playwright suite escalated when running locally from this sandbox because Vite cannot bind localhost inside the sandbox.
 
 
 ## Target Stack
@@ -28,7 +28,7 @@
 - [x] Phase 1: Modern project shell
 - [x] Phase 2: App foundation
 - [x] Phase 3: Core daily use
-- [ ] Phase 4: Tests and verification
+- [x] Phase 4: Tests and verification
 - [ ] Phase 5: Cleanup and hardening
 
 ## Task Log
@@ -96,6 +96,24 @@
 - Verified commands: `pnpm check`; `pnpm build`; `pnpm lint`; dev server route smoke checks for `/`, `/login`, `/notifications`, `/compose`, `/settings`, `/auth/callback`, and `/statuses/phase3-checkpoint`.
 - Known issues: Live OAuth round-trip and live Mastodon API responses are not verified against a real instance; status action buttons (reply, boost, favorite, more) are still placeholders; pagination (load more / infinite scroll) is not implemented; media upload, polls, emoji, and advanced compose features are out of scope for Phase 3.
 - Resume command/action: Start Phase 4 by adding Playwright tests covering fresh login, home timeline, notifications, status detail, successful compose, settings persistence, keyboard navigation through primary controls, and accessible labels for navigation, compose, status actions, dialogs, and settings.
+
+### 2026-06-27 Phase 4
+- [x] Task: Add Playwright e2e tests for the modern SvelteKit shell.
+  - Files touched: `.gitignore`, `package.json`, `pnpm-lock.yaml`, `playwright.config.js`, `tests/e2e/helpers.js`, `tests/e2e/login.spec.js`, `tests/e2e/timeline.spec.js`, `tests/e2e/status-detail.spec.js`, `tests/e2e/compose.spec.js`, `tests/e2e/settings.spec.js`, `tests/e2e/a11y.spec.js`, `update.md`.
+  - Commands run: `PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 pnpm add -D @playwright/test@1.61.1`; `pnpm exec playwright test --reporter=list` (run escalated because the sandbox uses an isolated network namespace, so the dev server cannot bind 127.0.0.1:4173 and Chromium cannot reach it from inside the sandbox); `pnpm check`; `pnpm build`; `pnpm lint`.
+  - Result: `@playwright/test` 1.61.1 installed; `playwright.config.js` configured to use the system `/usr/bin/chromium` (no browser download) with `--no-sandbox`, a single chromium project, and a `webServer` that starts `pnpm exec vite dev --port 4173 --host 127.0.0.1`; `package.json` gained `test:e2e` and `test` now chains `pnpm check && pnpm build && pnpm test:e2e`. Six spec files cover login/OAuth, home timeline, notifications, status detail, compose, settings persistence, and accessibility/keyboard navigation. Final full e2e run passed 27/27.
+  - Findings fixed (test harness, not app regressions):
+    1. `page.route` glob patterns did not intercept some instance API URLs under this Chromium build, so the helpers now use `RegExp` routes and register the broad fallback before specific mocks.
+    2. `page.addInitScript` was unreliable for localStorage seeding before the SvelteKit store initialized, so `seed_state` now uses `goto(route) -> evaluate(set localStorage) -> reload()` and waits for the page to settle.
+    3. Immediate post-`goto` clicks on login/settings could happen before hydration, so affected tests wait for the page to settle before interacting.
+    4. The compose content-warning test now uses an exact label match so the checkbox label `Add content warning` is not counted as the text input.
+  - Notes: No real Mastodon instance is used; all instance traffic is mocked via `page.route`. Tests must be run escalated (`sandbox_permissions: require_escalated`) in this environment because the sandbox network namespace cannot bind or reach localhost. `PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1` was used so no Playwright browser binaries are downloaded; the system Chromium at `/usr/bin/chromium` is used via `launchOptions.executablePath`.
+
+### Phase 4 Stop Point
+- Working state: Phase 4 complete; Playwright e2e coverage is in place and green.
+- Verified commands: `pnpm check`; `pnpm build`; `pnpm lint`; `pnpm exec playwright test --reporter=list` (escalated).
+- Known issues: Live OAuth round-trip and live Mastodon API responses are still not verified against a real instance; status action buttons, pagination, media upload, polls, emoji, and advanced compose features remain outside this phase.
+- Resume command/action: Start Phase 5 cleanup and hardening.
 
 ## Decisions
 - Fresh browser login and fresh app state are acceptable after modernization.

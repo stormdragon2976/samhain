@@ -15,13 +15,15 @@
     "preview": "vite preview --host 0.0.0.0",
     "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
     "lint": "eslint .",
-    "test": "pnpm check && pnpm build"
+    "test": "pnpm check && pnpm build && pnpm test:e2e",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@sveltejs/adapter-node": "5.5.7"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
+    "@playwright/test": "1.61.1",
     "@sveltejs/kit": "2.68.0",
     "@sveltejs/vite-plugin-svelte": "7.1.2",
     "eslint": "10.6.0",
